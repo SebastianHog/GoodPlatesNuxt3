@@ -1,7 +1,8 @@
 <template>
 	<section class="user-icon-wrapper">
-		<img src="~/assets/site_icons/user-icon.svg" />
-		<!-- Make P tag into a link to /login -->
+		<div class="user-icon">
+			<img src="~/assets/site_icons/user-icon.svg" />
+		</div>
 		<p class="user-icon-login-cue">{{ coreData.userIconLoginCue }}</p>
 	</section>
 </template>

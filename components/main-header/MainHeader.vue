@@ -1,14 +1,15 @@
 <template>
 	<section class="root-header-wrapper">
-		<div class="root-header-title-logo">
-			<img src="~/assets/logo_variants/GoodPlatesLogo.svg" />
-			<h1>{{ coreData.name }}</h1>
+		<div class="root-header-title-logo xs">
+			<img
+				class="header-logo"
+				src="~/assets/logo_variants/GoodPlatesLogo.svg" />
+			<h1 class="header-title">{{ coreData.name }}</h1>
 		</div>
 		<UserIcon />
 		<div class="root-header-right">
-			<img
-				src="~/assets/site_icons/search_icon.svg"
-				class="header-search-icon" />
+			<SearchIcon />
+			<MenuButton />
 		</div>
 	</section>
 </template>

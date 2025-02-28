@@ -1,0 +1,10 @@
+@use '~/assets/styles/setup' as *;
+
+.menu-icon-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.menu-icon {
+		width: toRem(48);
+	}
+}

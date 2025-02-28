@@ -1,7 +1,7 @@
 @use '~/assets/styles/setup' as *;
 
 .root-header-wrapper {
-	height: toRem(48);
+	height: toRem(64);
 	font-size: toRem(32);
 	font-weight: bold;
 	display: flex;
@@ -24,8 +24,12 @@
 	}
 
 	.root-header-right {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: toRem(32);
+
 		.header-search-icon {
-			rotate: 90deg;
 			width: toRem(32);
 		}
 	}
