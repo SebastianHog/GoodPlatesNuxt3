@@ -1,0 +1,19 @@
+@use '~/assets/styles/setup' as *;
+
+.root-header-wrapper {
+	height: toRem(102);
+	font-size: toRem(64);
+	padding: 0 toRem(64);
+
+	.root-header-title-logo {
+		img {
+			width: toRem(92);
+		}
+	}
+
+	.root-header-right {
+		.header-search-icon {
+			width: toRem(64);
+		}
+	}
+}

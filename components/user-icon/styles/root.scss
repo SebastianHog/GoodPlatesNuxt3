@@ -1,0 +1,9 @@
+@use '~/assets/styles/setup' as *;
+
+.user-icon-wrapper {
+	height: toRem(32);
+
+	img {
+		width: toRem(32);
+	}
+}

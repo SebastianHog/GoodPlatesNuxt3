@@ -1,0 +1,35 @@
+@use './tokens' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 100dvh;
+	background: $primary-color;
+	color: $primary-text-color;
+	font-family: 'Inter', sans-serif;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+}
