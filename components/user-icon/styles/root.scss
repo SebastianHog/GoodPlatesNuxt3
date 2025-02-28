@@ -2,8 +2,16 @@
 
 .user-icon-wrapper {
 	height: toRem(32);
+	display: flex;
+	flex-direction: row;
+	gap: toRem(8);
+	align-items: center;
 
 	img {
 		width: toRem(32);
+	}
+
+	.user-icon-login-cue {
+		display: none;
 	}
 }
