@@ -1,0 +1,15 @@
+@use '~/assets/styles/setup' as *;
+
+.site-button-main {
+	width: toRem(112);
+	height: toRem(38);
+	background-color: $primary-color;
+	color: black;
+	font-size: toRem(16);
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: none;
+	letter-spacing: 0px;
+}

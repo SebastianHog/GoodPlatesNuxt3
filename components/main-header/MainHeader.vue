@@ -4,7 +4,7 @@
 			<img
 				class="header-logo"
 				src="~/assets/logo_variants/GoodPlatesLogo.svg" />
-			<h1 class="header-title">{{ coreData.name }}</h1>
+			<h1 class="header-title">{{ coredata.name }}</h1>
 		</div>
 		<UserIcon />
 		<div class="root-header-right">
@@ -16,5 +16,5 @@
 
 <script lang="ts" setup>
 	import './style.scss';
-	import coreData from '~/data/core.json';
+	import coredata from '~/data/core.json';
 </script>

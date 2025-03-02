@@ -3,11 +3,11 @@
 		<div class="user-icon">
 			<img src="~/assets/site_icons/user-icon.svg" />
 		</div>
-		<p class="user-icon-login-cue">{{ coreData.userIconLoginCue }}</p>
+		<p class="user-icon-login-cue">{{ coredata.header.userIconLoginCue }}</p>
 	</section>
 </template>
 
 <script lang="ts" setup>
 	import './style.scss';
-	import coreData from '~/data/core.json';
+	import coredata from '~/data/core.json';
 </script>

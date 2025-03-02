@@ -1,4 +1,9 @@
 {
 	"name": "GoodPlates",
-	"userIconLoginCue": "log in"
+	"header": {
+		"userIconLoginCue": "log in"
+	},
+	"hero": {
+		"title": "Meal of the day"
+	}
 }
