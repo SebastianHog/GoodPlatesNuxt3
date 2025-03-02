@@ -1,7 +1,7 @@
 @use '~/assets/styles/setup' as *;
 
 .site-button-main {
-	width: toRem(176);
+	min-width: toRem(176);
 	height: toRem(56);
 	font-size: toRem(28);
 }

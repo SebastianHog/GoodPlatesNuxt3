@@ -1,0 +1,22 @@
+@use '~/assets/styles/setup' as *;
+
+.buttons-display-wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: toRem(8);
+	margin: 1rem;
+	justify-content: space-evenly;
+	width: fit-content;
+	align-self: center;
+
+	.buttons-display-button-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.buttons-display-button {
+			font-size: 1.5rem;
+			text-wrap: nowrap;
+			font-weight: 300;
+		}
+	}
+}

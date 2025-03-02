@@ -1,0 +1,6 @@
+@use '~/assets/styles/setup' as *;
+
+.page-content-wrapper {
+	display: flex;
+	flex-direction: column;
+}

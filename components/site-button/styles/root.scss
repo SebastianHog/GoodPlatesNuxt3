@@ -1,9 +1,9 @@
 @use '~/assets/styles/setup' as *;
 
 .site-button-main {
-	width: toRem(112);
 	height: toRem(38);
-	background-color: $primary-color;
+	min-width: toRem(112);
+	padding: toRem(12);
 	color: black;
 	font-size: toRem(16);
 	text-decoration: none;
@@ -11,5 +11,13 @@
 	justify-content: center;
 	align-items: center;
 	text-transform: none;
-	letter-spacing: 0px;
+	letter-spacing: 0;
+}
+
+.primary {
+	background-color: $button-primary-color;
+}
+
+.secondary {
+	background-color: $button-secondary-color;
 }

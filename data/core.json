@@ -5,5 +5,10 @@
 	},
 	"hero": {
 		"title": "Meal of the day"
+	},
+	"category": {
+		"currentPush": ["Turkish", "Lunch", "Traditional", "Fish", "Desert", "Sweet"],
+		"mealVariant": ["Breakfast", "Brunch", "Lunch", "Dinner"],
+		"ingredient": ["Meat", ""]
 	}
 }

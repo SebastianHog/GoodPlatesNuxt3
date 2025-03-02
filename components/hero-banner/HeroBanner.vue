@@ -27,7 +27,6 @@
 
 	const { data: recipe, status } = await useAsyncData<IRecipe>('recipe', () => $fetch('http://localhost:3042/api/recipes/get?recipeRequest=random').then((res: any) => res.recipe));
 	const refresh = () => refreshNuxtData('recipe');
-	console.log(status.value);
 
 	const successData = computed(() => status.value === 'success');
 </script>
