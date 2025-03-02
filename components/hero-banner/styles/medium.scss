@@ -1,0 +1,9 @@
+@use '~/assets/styles/setup' as *;
+
+.hero-wrapper {
+	.hero-goto-button {
+		bottom: toRem(16);
+		right: 50%;
+		transform: translate(50%);
+	}
+}
