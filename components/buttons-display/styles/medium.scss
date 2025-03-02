@@ -1,1 +1,13 @@
 @use '~/assets/styles/setup' as *;
+
+.buttons-display-full-wrapper {
+	width: 100%;
+	.buttons-display-wrapper {
+		overflow: hidden;
+		display: flex;
+		.buttons-display-wrapper {
+			.buttons-display-button {
+			}
+		}
+	}
+}

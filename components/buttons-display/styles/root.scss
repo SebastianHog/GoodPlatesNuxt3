@@ -1,22 +1,56 @@
 @use '~/assets/styles/setup' as *;
 
-.buttons-display-wrapper {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: toRem(8);
-	margin: 1rem;
-	justify-content: space-evenly;
+.buttons-display-full-wrapper {
 	width: fit-content;
 	align-self: center;
+	margin: toRem(8) 0;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
 
-	.buttons-display-button-wrapper {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	&.scroller {
+		.buttons-display-title {
+			margin-bottom: toRem(8);
+		}
+
+		.buttons-display-wrapper {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+		}
 		.buttons-display-button {
-			font-size: 1.5rem;
-			text-wrap: nowrap;
-			font-weight: 300;
+			height: toRem(48);
+		}
+	}
+
+	.buttons-display-title {
+		font-size: toRem(36);
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: $secondary-color;
+	}
+
+	.buttons-display-wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: toRem(8);
+		padding: 0 toRem(16);
+		max-width: 100%;
+		overflow: scroll;
+
+		.buttons-display-button-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.buttons-display-button {
+				font-size: 1.5rem;
+				text-wrap: nowrap;
+				font-weight: 300;
+				width: 10rem;
+			}
 		}
 	}
 }

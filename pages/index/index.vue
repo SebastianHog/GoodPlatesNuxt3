@@ -1,7 +1,10 @@
 <template>
 	<section class="page-content-wrapper">
 		<HeroBanner />
-		<ButtonsDisplay :buttons="buttonCategories" />
+		<ButtonsDisplay
+			:buttons="buttonCategories"
+			title="categories"
+			scroller />
 	</section>
 </template>
 
