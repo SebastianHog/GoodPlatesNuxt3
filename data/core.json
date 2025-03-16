@@ -4,7 +4,8 @@
 		"userIconLoginCue": "log in"
 	},
 	"hero": {
-		"title": "Meal of the day"
+		"title": "Meal of the day",
+		"subtitle": "dasd"
 	},
 	"category": {
 		"currentPush": [

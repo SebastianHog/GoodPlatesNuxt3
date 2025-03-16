@@ -4,7 +4,7 @@
 			<h1
 				@click="() => refresh()"
 				class="hero-title">
-				{{ coredata.hero.title }}
+				{{ json.hero.title }}
 			</h1>
 			<h2 class="hero-food">{{ successData ? recipe?.title : 'Loading' }}</h2>
 		</div>
@@ -23,9 +23,12 @@
 <script lang="ts" setup>
 	import type { IRecipe } from '~/types/recipe';
 	import './style.scss';
-	import coredata from '~/data/core.json';
+	import json from '~/data/core.json';
 
-	const { data: recipe, status } = await useAsyncData<IRecipe>('recipe', () => $fetch('http://localhost:3042/api/recipes/get?recipeRequest=random').then((res: any) => res.recipe));
+	const config = useRuntimeConfig();
+	const base_url = config.public.BASE_URL;
+
+	const { data: recipe, status } = await useAsyncData<IRecipe>('recipe', () => $fetch(`${base_url}/recipes/get?recipeRequest=random`).then((res: any) => res.recipe));
 	const refresh = () => refreshNuxtData('recipe');
 
 	const successData = computed(() => status.value === 'success');
