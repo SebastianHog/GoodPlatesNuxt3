@@ -36,6 +36,6 @@
 	};
 
 	onMounted(async () => {
-		curUser.value = await userStore.getCurrentUserData();
+		curUser.value = (await userStore.getCurrentUserData()) || null;
 	});
 </script>
