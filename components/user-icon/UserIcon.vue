@@ -5,15 +5,15 @@
 		</div>
 		<SiteButton
 			@click="login"
-			v-if="!user"
+			v-if="!curUser"
 			to="/login">
-			<p class="user-icon-login-cue">{{ coredata.header.userIconLoginCue }}</p>
+			<p class="user-icon-login-cue">out: {{ coredata.header.userIconLoginCue }}</p>
 		</SiteButton>
 		<SiteButton
 			@click="login"
 			v-else
-			:to="`/user/${user.username}`">
-			<p class="user-icon-login-cue">{{ user.username }}</p>
+			:to="`/user/${curUser.username}`">
+			<p class="user-icon-login-cue">in: {{ curUser.username }}</p>
 		</SiteButton>
 	</section>
 </template>
@@ -21,6 +21,9 @@
 <script lang="ts" setup>
 	import './style.scss';
 	import coredata from '~/data/core.json';
+	import type { IUser } from '~/types/user';
+
+	const curUser = ref<IUser | null>(null);
 
 	const userStore = useUserStore();
 
@@ -32,6 +35,7 @@
 		}
 	};
 
-	const user = computed(() => userStore.getUser);
-	console.log(user);
+	onMounted(async () => {
+		curUser.value = await userStore.getCurrentUserData();
+	});
 </script>

@@ -15,7 +15,7 @@
 				<SiteButton
 					class="buttons-display-button"
 					variant="2"
-					:to="`c/${button}`">
+					:to="`category/${button}`">
 					{{ button }}
 				</SiteButton>
 			</div>

@@ -1,10 +1,11 @@
+import { jwtDecode } from 'jwt-decode';
 import { defineStore } from 'pinia';
 import type { IUser } from '~/types/user';
 
 export const useUserStore = defineStore('user', {
 	state: () => ({
 		user: {} as IUser | null,
-		token: useCookie('login_token').value || ('' as string), // Automatically use cookie value if it exists
+		token: useCookie('login_token').value || ('' as string),
 	}),
 
 	getters: {
@@ -36,6 +37,20 @@ export const useUserStore = defineStore('user', {
 				this.token = resp.token;
 			} catch (err: any) {
 				throw new Error(err.message || 'Login failed');
+			}
+		},
+
+		async getCurrentUserData() {
+			const config = useRuntimeConfig();
+			const base_url = config.public.BASE_URL;
+
+			try {
+				const currentId = jwtDecode<{ id: string }>(this.token).id;
+
+				const resp = await $fetch<IUser>(`${base_url}/user/${currentId}`);
+				return resp;
+			} catch (error) {
+				console.error('Failed getting current user data');
 			}
 		},
 
