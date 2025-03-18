@@ -18,6 +18,9 @@
 		left: 50%;
 		transform: translateX(-50%);
 
+		.header-title {
+			font-size: toRem(32);
+		}
 		img {
 			width: toRem(48);
 		}

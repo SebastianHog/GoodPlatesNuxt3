@@ -35,6 +35,8 @@ export const useUserStore = defineStore('user', {
 
 				this.user = resp.user;
 				this.token = resp.token;
+				useCookie('login_token').value = resp.token;
+				await navigateTo('/');
 			} catch (err: any) {
 				throw new Error(err.message || 'Login failed');
 			}
@@ -61,7 +63,6 @@ export const useUserStore = defineStore('user', {
 
 			useCookie('login_token').value = null;
 			console.log('Logging out');
-			console.log(this.user, this.token);
 		},
 	},
 });

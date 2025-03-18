@@ -13,12 +13,14 @@
 			<input
 				type="text"
 				placeholder="Email"
-				class="email-input" />
+				class="email-input"
+				v-model="email" />
 			<div class="password-container">
 				<input
 					type="password"
 					placeholder="Password"
-					class="password-input" />
+					class="password-input"
+					v-model="password" />
 				<site-button
 					to="/forgot-password"
 					class="forgot-password-btn"
@@ -26,12 +28,35 @@
 				>
 			</div>
 		</div>
+		<div class="buttons-container">
+			<site-button
+				@click="login"
+				class="login-button"
+				>Login</site-button
+			>
+		</div>
 	</section>
 </template>
 
 <script lang="ts" setup>
 	import './style.scss';
+	import { useUserStore } from '#imports';
+
+	const userStore = useUserStore();
+
+	const email = ref('');
+	const password = ref('');
+
 	definePageMeta({
 		layout: 'login',
 	});
+
+	const login = async () => {
+		console.log('login');
+		try {
+			await userStore.login(email.value, password.value);
+		} catch (error) {
+			console.error('Login failed');
+		}
+	};
 </script>

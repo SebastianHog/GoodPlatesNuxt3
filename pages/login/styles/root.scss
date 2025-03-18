@@ -58,4 +58,16 @@
 			}
 		}
 	}
+	.buttons-container {
+		.login-button {
+			background: $tertiary-color;
+			color: $secondary-text-color;
+			width: fit-content;
+			width: toRem(221);
+			height: toRem(76);
+			border-radius: toRem(10);
+			font-size: toRem(36);
+			font-weight: bold;
+		}
+	}
 }
