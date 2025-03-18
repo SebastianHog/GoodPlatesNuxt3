@@ -1,0 +1,10 @@
+@use 'sass:meta';
+@use 'styles/root';
+
+@media (min-width: 992px) {
+	@include meta.load-css('styles/medium.scss');
+}
+
+@media (max-width: 450px) {
+	@include meta.load-css('styles/small.scss');
+}

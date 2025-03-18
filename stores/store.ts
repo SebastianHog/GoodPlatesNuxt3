@@ -56,11 +56,12 @@ export const useUserStore = defineStore('user', {
 
 		async logout() {
 			this.user = null;
+
 			this.token = '';
 
 			useCookie('login_token').value = null;
-
-			navigateTo('/login');
+			console.log('Logging out');
+			console.log(this.user, this.token);
 		},
 	},
 });

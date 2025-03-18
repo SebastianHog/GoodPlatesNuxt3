@@ -1,0 +1,61 @@
+@use '~/assets/styles/setup' as *;
+
+.login-wrapper {
+	width: 100%;
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	justify-content: center;
+	padding-top: toRem(41);
+
+	h1 {
+		font-size: toRem(40);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		line-height: 42px;
+		font-weight: 300;
+
+		.logo-title-text {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			h1 {
+				font-size: toRem(48);
+				font-weight: bold;
+			}
+			.welcome-logo {
+				height: toRem(48);
+
+				margin-right: toRem(8);
+			}
+		}
+	}
+
+	.inputs-container {
+		width: 90vw;
+		gap: toRem(40);
+		display: flex;
+		flex-direction: column;
+
+		input {
+			height: toRem(76);
+			width: 100%;
+			background: $secondary-color;
+			border-radius: toRem(22);
+			border: none;
+			font-size: toRem(32);
+			padding: 0 toRem(16);
+		}
+		div {
+			display: flex;
+			flex-direction: column;
+
+			.forgot-password-btn {
+				width: fit-content;
+				color: $text-bad-color;
+				text-decoration: underline;
+			}
+		}
+	}
+}

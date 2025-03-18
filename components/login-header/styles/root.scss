@@ -1,0 +1,23 @@
+@use '~/assets/styles/setup' as *;
+
+.login-header-wrapper {
+	height: toRem(64);
+	font-size: toRem(32);
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 toRem(24);
+	.login-header-title-logo {
+		display: flex;
+		align-items: center;
+
+		.header-title {
+			font-size: toRem(32);
+		}
+
+		.header-logo {
+			width: toRem(48);
+		}
+	}
+}

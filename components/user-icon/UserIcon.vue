@@ -4,16 +4,16 @@
 			<img src="~/assets/site_icons/user-icon.svg" />
 		</div>
 		<SiteButton
-			@click="login"
 			v-if="!curUser"
-			to="/login">
-			<p class="user-icon-login-cue">out: {{ coredata.header.userIconLoginCue }}</p>
+			to="/login"
+			class="user-btn">
+			<p class="user-icon-login-cue">{{ coredata.header.userIconLoginCue }}</p>
 		</SiteButton>
 		<SiteButton
-			@click="login"
 			v-else
-			:to="`/user/${curUser.username}`">
-			<p class="user-icon-login-cue">in: {{ curUser.username }}</p>
+			:to="`/user/${curUser.username}`"
+			class="user-btn">
+			<p class="user-icon-login-cue">{{ curUser.username }}</p>
 		</SiteButton>
 	</section>
 </template>
@@ -27,13 +27,13 @@
 
 	const userStore = useUserStore();
 
-	const login = async () => {
-		try {
-			await userStore.login('seblhog@gmail.com', 'password');
-		} catch (error) {
-			console.error('Login failed');
-		}
-	};
+	// const login = async () => {
+	// 	try {
+	// 		await userStore.login('seblhog@gmail.com', 'password');
+	// 	} catch (error) {
+	// 		console.error('Login failed');
+	// 	}
+	// };
 
 	onMounted(async () => {
 		curUser.value = (await userStore.getCurrentUserData()) || null;

@@ -1,6 +1,6 @@
 <template>
-	<section class="root-header-wrapper">
-		<div class="root-header-title-logo xs">
+	<section class="login-header-wrapper">
+		<div class="login-header-title-logo xs">
 			<img
 				class="header-logo"
 				src="~/assets/logo_variants/GoodPlatesLogo.svg" />
@@ -10,9 +10,7 @@
 				>{{ coredata.name }}</site-button
 			>
 		</div>
-		<UserIcon />
 		<div class="root-header-right">
-			<SearchIcon />
 			<MenuButton />
 		</div>
 	</section>
