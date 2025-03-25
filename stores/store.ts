@@ -58,10 +58,8 @@ export const useUserStore = defineStore('user', {
 
 		async logout() {
 			this.user = null;
-
 			this.token = '';
 
-			useCookie('login_token').value = null;
 			console.log('Logging out');
 		},
 	},
