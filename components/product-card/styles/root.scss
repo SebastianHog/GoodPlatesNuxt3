@@ -1,0 +1,8 @@
+@use '~/assets/styles/setup' as *;
+
+.product-card{
+  width: 100%;
+  height: toRem(64);
+  background: red;
+  font-size: toRem(48);
+}
