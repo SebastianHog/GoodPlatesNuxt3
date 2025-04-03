@@ -35,10 +35,10 @@
 	.buttons-display-wrapper {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		justify-content: center;
 		gap: toRem(8);
 		padding: 0 toRem(16);
-		max-width: 100%;
-		overflow: scroll;
+		flex-wrap: wrap;
 
 		.buttons-display-button-wrapper {
 			display: flex;

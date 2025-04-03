@@ -6,7 +6,7 @@
 		<SiteButton
 			v-if="!curUser"
 			to="/login"
-			class="user-btn">
+			class="user-btn">	
 			<p class="user-icon-login-cue">{{ coredata.header.userIconLoginCue }}</p>
 		</SiteButton>
 		<SiteButton
