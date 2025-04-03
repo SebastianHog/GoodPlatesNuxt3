@@ -52,11 +52,10 @@
 	});
 
 	const login = async () => {
-		console.log('login');
 		try {
 			await userStore.login(email.value, password.value);
 		} catch (error) {
-			console.error('Login failed');
+			console.error('Login failed', error);
 		}
 	};
 </script>
