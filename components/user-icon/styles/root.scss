@@ -9,6 +9,7 @@
 		width: toRem(32);
 	}
 	.user-btn {
+		display: none;
 	}
 	.user-icon {
 		width: 3rem;
@@ -20,6 +21,5 @@
 		border-radius: toRem(32);
 	}
 	.user-icon-login-cue {
-		display: none;
 	}
 }

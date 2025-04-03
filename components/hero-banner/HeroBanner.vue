@@ -2,7 +2,6 @@
 	<section class="hero-wrapper">
 		<div class="hero-text">
 			<h1
-				@click="() => refresh()"
 				class="hero-title">
 				{{ json.hero.title }}
 			</h1>
