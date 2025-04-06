@@ -1,5 +1,10 @@
 <template>
-	<p style="color: black">{{ user?.username.slice(1) }}</p>
+	<section class="user-icon-wrapper">
+		<p v-if="!user?.username">
+			{{ userLetter }}
+		</p>
+		<img v-else :src="user?.photo" class="user-icon-photo">
+	</section>
 </template>
 
 <script lang="ts" setup>
@@ -13,7 +18,7 @@ const props = defineProps({
 	},
 });
 
-const user = computed(() => {
-	return props.user;
+const userLetter = computed(() => {
+	return props.user?.username?.[0] ?? 'U';
 });
 </script>

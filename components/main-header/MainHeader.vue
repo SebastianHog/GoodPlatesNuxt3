@@ -4,12 +4,15 @@
 			<img class="header-logo" src="~/assets/logo_variants/GoodPlatesLogo.svg" />
 			<site-button to="/" class="header-title">{{ coredata.name }}</site-button>
 		</div>
-
-		<site-button v-if="user?.username" :to="`/user/${user._id}`">
-			{{ user.username }}
-		</site-button>
-		<site-button v-else to="login">Log in</site-button>
-
+		<div v-if="user" class="header-current-user">
+			<site-button v-if="user?.username" :to="`/user/${user._id}`">
+				<user-icon :user="user" />
+				{{ user.username }}
+			</site-button>
+			<site-button v-else to="/login">
+				<user-icon :user="user" /> Log in
+			</site-button>
+		</div>
 		<div class="root-header-right">
 			<SearchIcon />
 			<MenuButton />

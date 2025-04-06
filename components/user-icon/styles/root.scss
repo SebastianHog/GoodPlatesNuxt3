@@ -1,25 +1,19 @@
 @use '~/assets/styles/setup' as *;
 
-.user-icon-wrapper {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+.user-icon-wrapper{
+	width: toRem(32);
+	height: toRem(32);
+	margin-right: toRem(8);
+	overflow: hidden;
 
-	img {
-		width: toRem(32);
-	}
-	.user-btn {
-		display: none;
-	}
-	.user-icon {
-		width: 3rem;
-		height: 3rem;
+	
+	& > * {
+		border: 1px solid black;
+		border-radius: 100%;
+		width: 100%;
+		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border: toRem(2) solid black;
-		border-radius: toRem(32);
-	}
-	.user-icon-login-cue {
 	}
 }
