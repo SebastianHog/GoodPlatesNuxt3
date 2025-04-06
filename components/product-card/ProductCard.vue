@@ -1,7 +1,17 @@
 <template>
-	<section class="product-card">
-		<p>{{ product.title }}</p>
-	</section>
+	<site-button class="product-card" :to="`/recipe/${product._id}`">
+		<img :src="product.thumbnail" :alt="'image of' + product.title" class="product-thumbnail">
+		<div class="card-body">
+			<h1 class="card-title">{{ product.title }}</h1>
+			<p class="card-description">{{ product.description }}</p>
+			<div class="card-footer">
+				<div class="card-read-more" :to="`/recipe/${product._id}`">
+					Read more
+				</div>
+			</div>
+		</div>
+
+	</site-button>
 </template>
 
 <script lang="ts" setup>

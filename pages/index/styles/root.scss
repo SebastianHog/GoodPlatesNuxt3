@@ -3,4 +3,9 @@
 .page-content-wrapper {
 	display: flex;
 	flex-direction: column;
+	.product-listings{
+		display: flex;
+		flex-direction: column;
+		gap: toRem(2);
+	}
 }
