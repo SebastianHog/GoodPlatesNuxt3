@@ -1,14 +1,19 @@
 <template>
-	<p style="color: black">user: {{ props.username }}</p>
+	<p style="color: black">{{ user?.username.slice(1) }}</p>
 </template>
 
 <script lang="ts" setup>
 import './style.scss';
-import coredata from '~/data/core.json';
 import type { IUser } from '~/types/user';
 
+const props = defineProps({
+	user: {
+		type: Object as PropType<IUser>,
+		required: false,
+	},
+});
 
-
-const props = defineProps<IUser>();
-
+const user = computed(() => {
+	return props.user;
+});
 </script>

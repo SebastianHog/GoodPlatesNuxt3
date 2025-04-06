@@ -27,6 +27,5 @@ interface ProductCardProps {
 	date_posted: Date;
 }
 
-
 defineProps<{ product: ProductCardProps }>();
 </script>
