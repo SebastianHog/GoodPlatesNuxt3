@@ -1,19 +1,8 @@
-@use "~/assets/styles/setup" as *;
+@use '~/assets/styles/setup' as *;
 
-.user-icon-wrapper {
-  height: toRem(64);
-
-  .user-icon {
-    border: none;
-    img {
-      width: toRem(64);
-    }
-  }
-  .user-btn {
-    display: inline;
-    .user-icon-login-cue {
-      font-weight: lighter;
-      font-size: toRem(24);
-    }
-  }
+.user-icon-wrapper{
+	& > * {
+		width: toRem(62);
+		height: toRem(62);
+	}
 }

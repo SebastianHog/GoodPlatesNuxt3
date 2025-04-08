@@ -8,6 +8,7 @@
 				<div class="card-read-more" :to="`/recipe/${product._id}`">
 					Read more
 				</div>
+				<user-icon :user="props.product.creator" />
 			</div>
 		</div>
 
@@ -27,5 +28,5 @@ interface ProductCardProps {
 	date_posted: Date;
 }
 
-defineProps<{ product: ProductCardProps }>();
+const props = defineProps<{ product: ProductCardProps }>();
 </script>
