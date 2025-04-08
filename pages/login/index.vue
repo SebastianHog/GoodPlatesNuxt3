@@ -15,7 +15,7 @@
 			</div>
 		</div>
 		<div class="buttons-container">
-			<site-button @click="login" class="login-button">Login</site-button>
+			<site-button @click="login" class="login-button">{{ coreData.login.button }}</site-button>
 		</div>
 	</section>
 </template>
@@ -23,6 +23,7 @@
 <script lang="ts" setup>
 import './style.scss';
 import { useUserStore } from '#imports';
+import coreData from '~/data/core.json'
 
 const userStore = useUserStore();
 
@@ -38,7 +39,7 @@ const login = async () => {
 		const resp = await userStore.login(email.value, password.value);
 		useCookie('login_token').value = resp.token;
 	} catch (error) {
-		console.error('Login failed');
+		console.error('Login failed', error);
 	}
 };
 </script>

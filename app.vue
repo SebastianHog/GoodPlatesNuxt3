@@ -10,8 +10,12 @@ import '~/assets/styles/global.scss';
 const userStore = useUserStore();
 const route = useRoute();
 
+const alternateLayouts = ['/login', '/register']
+
 const layout = computed(() => {
-	return route.path === '/login' ? 'login' : 'root';
+	if (alternateLayouts.includes(route.path))
+		return 'login';
+	return 'root'
 });
 
 onMounted(() => {

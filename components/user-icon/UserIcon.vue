@@ -18,7 +18,6 @@ const props = defineProps({
 	},
 });
 
-console.log('user: ', props.user);
 
 const userLetter = computed(() => {
 	return props.user?.username?.[0] ?? 'U';

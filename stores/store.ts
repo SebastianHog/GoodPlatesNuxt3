@@ -51,6 +51,30 @@ export const useUserStore = defineStore('user', {
 			window.location.reload();
 		},
 
+		async register(username: string, email: string, password: string) {
+			const config = useRuntimeConfig();
+			const base_url = config.public.BASE_URL;
+
+			try {
+				const resp = await $fetch<any>(`${base_url}/register`, {
+					method: 'POST',
+					body: {
+						username,
+						email,
+						password,
+					},
+					credentials: 'include',
+				});
+
+				console.log('register:', resp);
+
+				await navigateTo('/login');
+				return resp;
+			} catch (err: any) {
+				throw new Error(err.message || 'Register failed');
+			}
+		},
+
 		async getCurrentUserData(id: string) {
 			const config = useRuntimeConfig();
 			const base_url = config.public.BASE_URL;

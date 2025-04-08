@@ -20,5 +20,13 @@
 		],
 		"mealVariant": ["Breakfast", "Brunch", "Lunch", "Dinner"],
 		"ingredient": ["Meat", ""]
+	},
+	"register": {
+		"button": "Register",
+		"passwordNoMatch": "Passwords do not match",
+		"loginPrompt": "Already have an account? Log in!"
+	},
+	"login": {
+		"button": "Log in"
 	}
 }
