@@ -1,0 +1,33 @@
+@use '~/assets/styles/setup' as *;
+
+
+.sidebar-wrapper {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+
+  .sidebar-body{
+    width: 65vw;
+    height: 100vh;
+    background: $secondary-color;
+  }
+}
+.overlay{
+  background: rgba(0,0,0,0.8);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+
+  .close-button{
+    position: absolute;
+    z-index: 5;
+    right: toRem(24);
+    top: toRem(24);
+    width: 3rem;  
+    cursor: pointer;
+  }
+}

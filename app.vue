@@ -1,5 +1,6 @@
 <template>
 	<NuxtLayout :name="layout">
+		<Sidebar />
 		<NuxtPage />
 	</NuxtLayout>
 </template>
@@ -25,6 +26,4 @@ onMounted(() => {
 	const userId = jwtDecode<{ id: string }>(cookie).id;
 	userStore.getCurrentUserData(userId);
 })
-
-
 </script>
