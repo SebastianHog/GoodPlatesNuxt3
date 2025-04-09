@@ -7,11 +7,13 @@ export const useUtilsStore = defineStore('utils', {
 	}),
 
 	actions: {
-		toggleScrolling() {
-			if (document.body.style.overflow != 'hidden')
-				document.body.style.overflow = 'hidden';
+		scrollingState(value: boolean) {
+			if (!value) document.body.style.overflow = 'hidden';
 			else document.body.style.overflow = '';
 		},
-		toggleSidebar() {},
+		toggleSidebar(value: boolean) {
+			this.sidebarOpen = value;
+			this.scrollingState(!value);
+		},
 	},
 });

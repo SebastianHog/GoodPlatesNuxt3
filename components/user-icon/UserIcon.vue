@@ -20,6 +20,6 @@ const props = defineProps({
 
 
 const userLetter = computed(() => {
-	return props.user?.username?.[0] ?? 'U';
+	return props.user?.username?.[0] ?? 'Q';
 });
 </script>

@@ -1,5 +1,26 @@
 @use '~/assets/styles/setup' as *;
 
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
 
 .sidebar-wrapper {
   display: flex;
@@ -7,13 +28,30 @@
   position: absolute;
   top: 0;
   z-index: 4;
+  animation: slide-in-left 0.2s ease-out forwards;
 
-  .sidebar-body{
+  &.sidebar-is-closing {
+    animation: slide-out-left 0.2s ease-in forwards;
+  }
+
+  .sidebar-body {
     width: 65vw;
     height: 100vh;
     background: $secondary-color;
+
+    .options-list{
+      display: flex;
+      flex-direction: column;
+      gap: toRem(4);
+
+      .sidebar-option-label{
+        text-align: left;
+        width: 100%;
+      }
+    }
   }
 }
+
 .overlay{
   background: rgba(0,0,0,0.8);
   height: 100vh;
@@ -27,7 +65,7 @@
     z-index: 5;
     right: toRem(24);
     top: toRem(24);
-    width: 3rem;  
+    width: toRem(36);  
     cursor: pointer;
   }
 }
