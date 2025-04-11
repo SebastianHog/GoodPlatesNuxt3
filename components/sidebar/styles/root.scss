@@ -52,6 +52,34 @@
         width: 100%;
       }
     }
+
+    .sidebar-footer{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      color: $secondary-text-color;
+      padding: 1rem 0;
+      border-top: toRem(1) solid black;
+      
+      display: grid;
+      justify-content: center;
+      text-align: center;
+      div{
+        .created-by {
+          height: fit-content;
+          width: 100%;
+        }
+        span {
+          height: fit-content;
+          font-size: toRem( 24 );
+          font-weight: bold;
+        }
+      }
+      .version-numbering{
+        font-size: toRem(12);
+      }
+    }
   }
 }
 

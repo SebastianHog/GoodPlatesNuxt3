@@ -10,6 +10,19 @@
             </site-button>
           </li>
         </ul>
+        <aside class="sidebar-footer">
+          <div>
+            <p class="created-by">
+              GoodPlates was created by
+            </p>
+            <span>
+              Sebastian Högsander
+            </span>
+          </div>
+          <div class="version-numbering">
+            v0.0.1
+          </div>
+        </aside>
       </div>
     </section>
     <div class="overlay">
