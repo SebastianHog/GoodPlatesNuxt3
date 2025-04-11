@@ -9,3 +9,8 @@
 		font-size: toRem(24);
 	}
 }
+@media (max-width: 450px) {	
+	.username-display-header {
+		display: none;
+	}
+}

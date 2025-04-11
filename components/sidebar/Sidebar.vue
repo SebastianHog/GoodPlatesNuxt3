@@ -2,7 +2,7 @@
   <div v-if="sidebarState">
     <section class="sidebar-wrapper" :class="hide">
       <div class="sidebar-body">
-        <user-icon :user="user"></user-icon>
+        <user-icon v-if="user" :user="user"></user-icon>
         <ul class="options-list">
           <li v-for="option in coreData.sidebar.options">
             <site-button variant="transparent" :to="option.path">

@@ -39,6 +39,9 @@
     height: 100vh;
     background: $secondary-color;
 
+    display: flex;
+    flex-direction: column;
+
     .options-list{
       display: flex;
       flex-direction: column;

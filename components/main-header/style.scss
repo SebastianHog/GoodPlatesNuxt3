@@ -5,6 +5,6 @@
 	@include meta.load-css('styles/desktop.scss');
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
 	@include meta.load-css('styles/small.scss');
 }

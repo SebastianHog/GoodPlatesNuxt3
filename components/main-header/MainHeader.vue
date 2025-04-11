@@ -2,12 +2,14 @@
 	<section class="root-header-wrapper">
 		<div class="root-header-title-logo xs">
 			<img class="header-logo" src="~/assets/logo_variants/GoodPlatesLogo.svg" />
-			<site-button to="/" class="header-title">{{ coredata.name }}</site-button>
+			<site-button variant="transparent" to="/" class="header-title">{{ coredata.name }}</site-button>
 		</div>
 		<div v-if="user" class="header-current-user">
 			<site-button v-if="user?.username" :to="`/user/${user._id}`">
 				<user-icon :user="user" />
-				{{ user.username }}
+				<span class="username-display-header">
+					{{ user.username }}
+				</span>
 			</site-button>
 			<site-button v-else to="/login">
 				<user-icon :user="user" /> Log in
