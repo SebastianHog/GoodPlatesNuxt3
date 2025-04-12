@@ -54,6 +54,7 @@ const close = () => {
 
   setTimeout(() => {
     utilsStore.toggleSidebar(false);
+    utilsStore.scrollingState(true);
     hide.value = '';
   }, 245);
 }

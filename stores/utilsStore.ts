@@ -12,8 +12,10 @@ export const useUtilsStore = defineStore('utils', {
 			else document.body.style.overflow = '';
 		},
 		toggleSidebar(value: boolean) {
+			const screenWidth = window.innerWidth;
 			this.sidebarOpen = value;
-			this.scrollingState(!value);
+			if (screenWidth > 992) return;
+			this.scrollingState(false);
 		},
 	},
 });

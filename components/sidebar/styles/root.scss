@@ -1,5 +1,15 @@
 @use '~/assets/styles/setup' as *;
 
+#viewport-desktop {
+	display: none;
+}
+
+@media (min-width: 992px) {
+	#viewport-desktop {
+		display: block;
+	}
+}
+
 @keyframes slide-in-left {
 	from {
 		transform: translateX(-100%);
@@ -24,7 +34,7 @@
 		opacity: 0;
 	}
 }
-@media (max-width: 550px) {
+@media (max-width: 992px) {
 	.sidebar-mobile {
 		.sidebar-wrapper {
 			display: flex;
@@ -71,7 +81,7 @@
 				}
 
 				.sidebar-footer {
-					@media (max-width: 550px) {
+					@media (max-width: 992px) {
 						position: absolute;
 						bottom: 0;
 						width: 100%;
@@ -121,7 +131,10 @@
 	}
 }
 
-@media (min-width: 550px) {
+@media (min-width: 992px) {
+	.sidebar-mobile {
+		display: none;
+	}
 	.dropdown-desktop {
 		background: red;
 		height: 5rem;
