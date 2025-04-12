@@ -28,25 +28,5 @@
 	},
 	"login": {
 		"button": "Log in"
-	},
-	"sidebar": {
-		"options": [
-			{
-				"label": "Create recipe",
-				"path": "/create"
-			},
-			{
-				"label": "My recipes",
-				"path": "/my_recipes"
-			},
-			{
-				"label": "My schedules",
-				"path": "/schedules"
-			},
-			{
-				"label": "Preferences",
-				"path": "/preferences"
-			}
-		]
 	}
 }

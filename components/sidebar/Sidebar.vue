@@ -7,8 +7,8 @@
           <span>{{ user?.username }}</span>
         </div>
         <ul class="options-list">
-          <li v-for="option in coreData.sidebar.options">
-            <site-button variant="transparent" :to="option.path">
+          <li v-for="option in data.sidebar.options">
+            <site-button variant="transparent" :to="option.path" @click="close">
               <p class="sidebar-option-label">{{ option.label }}</p>
             </site-button>
           </li>
@@ -32,15 +32,23 @@
       <img src="../../assets/site_icons/close_icon.svg" alt="close" class="close-button" @click="close">
     </div>
   </div>
-  <div v-if="sidebarState" class="dropdown-desktop">
 
+  <div v-if="sidebarState" class="dropdown-desktop" :class="hide">
+    <img src="../../assets/site_icons/close_icon.svg" alt="close" class="close-button" @click="close">
+    <ul class="options-list">
+      <li v-for="option in data.sidebar.options">
+        <site-button variant="transparent" :to="option.path" @click="close">
+          <p class="dropdown-option-label">{{ option.label }}</p>
+        </site-button>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script lang="ts" setup>
 import './style.scss';
 import { storeToRefs } from 'pinia';
-import coreData from '~/data/core.json'
+import data from '~/data/menus-buttons.json'
 
 const utilsStore = useUtilsStore();
 const userStore = useUserStore();
