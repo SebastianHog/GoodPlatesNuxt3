@@ -1,8 +1,11 @@
 <template>
-  <div v-if="sidebarState">
+  <div v-if="sidebarState" class="sidebar-mobile">
     <section class="sidebar-wrapper" :class="hide">
       <div class="sidebar-body">
-        <user-icon v-if="user" :user="user"></user-icon>
+        <div class="sidebar-user">
+          <user-icon redirect v-if="user" :user="user" />
+          <span>{{ user?.username }}</span>
+        </div>
         <ul class="options-list">
           <li v-for="option in coreData.sidebar.options">
             <site-button variant="transparent" :to="option.path">
@@ -28,6 +31,9 @@
     <div class="overlay">
       <img src="../../assets/site_icons/close_icon.svg" alt="close" class="close-button" @click="close">
     </div>
+  </div>
+  <div v-if="sidebarState" class="dropdown-desktop">
+
   </div>
 </template>
 

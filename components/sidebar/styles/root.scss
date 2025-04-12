@@ -1,102 +1,130 @@
 @use '~/assets/styles/setup' as *;
 
 @keyframes slide-in-left {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 @keyframes slide-out-left {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
+	from {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.4;
+	}
+	to {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+@media (max-width: 550px) {
+	.sidebar-mobile {
+		.sidebar-wrapper {
+			display: flex;
+			flex-direction: row;
+			position: absolute;
+			top: 0;
+			z-index: 4;
+			animation: slide-in-left 0.2s ease-out forwards;
+
+			&.sidebar-is-closing {
+				animation: slide-out-left 0.2s ease-in forwards;
+			}
+
+			.sidebar-body {
+				width: 65vw;
+				height: 100vh;
+				background: $secondary-color;
+
+				display: flex;
+				flex-direction: column;
+
+				.sidebar-user {
+					display: flex;
+					align-items: center;
+					margin: toRem(8) 0 0 toRem(8);
+					font-size: toRem(20);
+				}
+
+				.options-list {
+					display: flex;
+					flex-direction: column;
+					gap: toRem(4);
+					margin-top: toRem(4);
+					font-weight: 500;
+
+					li {
+						border-top: 1px solid black;
+
+						.sidebar-option-label {
+							text-align: left;
+							width: 100%;
+						}
+					}
+				}
+
+				.sidebar-footer {
+					@media (max-width: 550px) {
+						position: absolute;
+						bottom: 0;
+						width: 100%;
+						background: rgba(0, 0, 0, 0.3);
+						color: $secondary-text-color;
+						padding: 1rem 0;
+						border-top: toRem(1) solid black;
+
+						display: grid;
+						justify-content: center;
+						text-align: center;
+						div {
+							.created-by {
+								height: fit-content;
+								width: 100%;
+							}
+							span {
+								height: fit-content;
+								font-size: toRem(24);
+								font-weight: bold;
+							}
+						}
+						.version-numbering {
+							font-size: toRem(12);
+						}
+					}
+				}
+			}
+		}
+	}
+	.overlay {
+		background: rgba(0, 0, 0, 0.8);
+		height: 100vh;
+		width: 100%;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+
+		.close-button {
+			position: absolute;
+			z-index: 5;
+			right: toRem(24);
+			top: toRem(24);
+			width: toRem(36);
+			cursor: pointer;
+		}
+	}
 }
 
-.sidebar-wrapper {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 0;
-  z-index: 4;
-  animation: slide-in-left 0.2s ease-out forwards;
-
-  &.sidebar-is-closing {
-    animation: slide-out-left 0.2s ease-in forwards;
-  }
-
-  .sidebar-body {
-    width: 65vw;
-    height: 100vh;
-    background: $secondary-color;
-
-    display: flex;
-    flex-direction: column;
-
-    .options-list{
-      display: flex;
-      flex-direction: column;
-      gap: toRem(4);
-
-      .sidebar-option-label{
-        text-align: left;
-        width: 100%;
-      }
-    }
-
-    .sidebar-footer{
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      color: $secondary-text-color;
-      padding: 1rem 0;
-      border-top: toRem(1) solid black;
-      
-      display: grid;
-      justify-content: center;
-      text-align: center;
-      div{
-        .created-by {
-          height: fit-content;
-          width: 100%;
-        }
-        span {
-          height: fit-content;
-          font-size: toRem( 24 );
-          font-weight: bold;
-        }
-      }
-      .version-numbering{
-        font-size: toRem(12);
-      }
-    }
-  }
-}
-
-.overlay{
-  background: rgba(0,0,0,0.8);
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  z-index: 3;
-  top: 0;
-
-  .close-button{
-    position: absolute;
-    z-index: 5;
-    right: toRem(24);
-    top: toRem(24);
-    width: toRem(36);  
-    cursor: pointer;
-  }
+@media (min-width: 550px) {
+	.dropdown-desktop {
+		background: red;
+		height: 5rem;
+		width: 5rem;
+	}
 }
