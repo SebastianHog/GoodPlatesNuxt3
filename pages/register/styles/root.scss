@@ -6,7 +6,7 @@
 	grid-template-rows: repeat(1, 1fr);
 	justify-content: center;
 	margin-top: toRem(80);
-	
+
 	.welcome-banner {
 		font-size: toRem(40);
 		display: flex;
@@ -58,25 +58,25 @@
 				text-decoration: underline;
 			}
 		}
-		.password-mismatch-alert{
+		.password-mismatch-alert {
 			color: $text-bad-color;
 			position: relative;
-			top: -2rem;
+			top: -toRem(32);
 		}
 	}
 
-	.buttons-container{
+	.buttons-container {
 		position: absolute;
 		bottom: toRem(48);
 		width: 100vw;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 toRem(32) ;
+		padding: 0 toRem(32);
 
 		.login-prompt {
 			color: $primary-text-color;
-			font-size: 3rem;
+			font-size: toRem(48);
 		}
 
 		.register-button {
@@ -88,8 +88,6 @@
 			border-radius: toRem(10);
 			font-size: toRem(36);
 			font-weight: bold;
-			
 		}
-
 	}
 }

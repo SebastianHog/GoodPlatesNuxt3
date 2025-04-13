@@ -5,13 +5,13 @@
 		height: 0;
 	}
 	to {
-		height: 20rem;
+		height: toRem(320);
 	}
 }
 
 @keyframes slide-out {
 	from {
-		height: 20rem;
+		height: toRem(320);
 	}
 	to {
 		height: 0;

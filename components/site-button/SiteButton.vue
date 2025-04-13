@@ -1,7 +1,10 @@
 <template>
-	<NuxtLink class="site-button-main" :class="classes" :to="to">
+	<NuxtLink v-if="to" class="site-button-main" :class="classes" :to="to">
 		<slot />
 	</NuxtLink>
+	<button class="site-button-main" :class="classes" v-else @click="$emit('click')">
+		<slot />
+	</button>
 </template>
 
 <script setup>

@@ -1,15 +1,11 @@
 @use '~/assets/styles/setup' as *;
 
 .xs {
-	.header-logo {
-		display: none;
-	}
-
 	.header-title {
 		font-size: toRem(24);
 	}
 }
-@media (max-width: 450px) {	
+@media (max-width: 450px) {
 	.username-display-header {
 		display: none;
 	}

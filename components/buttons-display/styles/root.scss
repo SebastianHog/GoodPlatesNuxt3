@@ -46,10 +46,10 @@
 			align-items: center;
 
 			.buttons-display-button {
-				font-size: 1.5rem;
+				font-size: toRem(24);
 				text-wrap: nowrap;
 				font-weight: 300;
-				width: 10rem;
+				width: toRem(160);
 			}
 		}
 	}

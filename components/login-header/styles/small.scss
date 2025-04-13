@@ -1,10 +1,6 @@
 @use '~/assets/styles/setup' as *;
 
 .xs {
-	.header-logo {
-		display: none;
-	}
-
 	.header-title {
 		font-size: toRem(24);
 	}

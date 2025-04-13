@@ -39,7 +39,7 @@ const login = async () => {
 		const resp = await userStore.login(email.value, password.value);
 		useCookie('login_token').value = resp.token;
 	} catch (error) {
-		console.error('Login failed', error);
+		console.error('Login omega failed', error);
 	}
 };
 </script>

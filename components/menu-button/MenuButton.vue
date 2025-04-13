@@ -1,6 +1,6 @@
 <template>
-	<div class="menu-icon-wrapper">
-		<img src="~/assets/site_icons/menu_icon.svg" class="menu-icon" @click="openSidebar" />
+	<div class="menu-icon-wrapper" @click="openSidebar">
+		<img src="~/assets/site_icons/menu_icon.svg" class="menu-icon" />
 	</div>
 </template>
 

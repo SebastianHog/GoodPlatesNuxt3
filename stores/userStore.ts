@@ -89,7 +89,7 @@ export const useUserStore = defineStore('user', {
 				await navigateTo('/');
 				return resp;
 			} catch (err: any) {
-				throw new Error(err.message || 'Login failed');
+				throw new Error(err.message || 'Failed to get current user data');
 			}
 		},
 		async getUserById(id: string) {
@@ -104,7 +104,7 @@ export const useUserStore = defineStore('user', {
 
 				return resp;
 			} catch (err: any) {
-				throw new Error(err.message || 'Login failed');
+				throw new Error(err.message || 'Failed to get user data');
 			}
 		},
 	},

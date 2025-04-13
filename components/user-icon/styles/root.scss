@@ -1,6 +1,6 @@
 @use '~/assets/styles/setup' as *;
 
-.user-icon-wrapper{
+.user-icon-wrapper {
 	& > * {
 		border: 1px solid black;
 		border-radius: 100%;
@@ -9,6 +9,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-right: 1rem;
+		margin-right: toRem(16);
 	}
 }

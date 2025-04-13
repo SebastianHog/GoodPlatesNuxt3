@@ -8,6 +8,9 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 toRem(24);
+	.header-logo {
+		display: block;
+	}
 	.login-header-title-logo {
 		display: flex;
 		align-items: center;

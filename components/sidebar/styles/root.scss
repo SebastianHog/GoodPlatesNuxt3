@@ -91,7 +91,7 @@
 						width: 100%;
 						background: rgba(0, 0, 0, 0.3);
 						color: $secondary-text-color;
-						padding: 1rem 0;
+						padding: toRem(16) 0;
 						border-top: toRem(1) solid black;
 
 						display: grid;

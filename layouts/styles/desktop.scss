@@ -1,5 +1,5 @@
 @use '~/assets/styles/tokens' as *;
 
 .page-layout-root {
-	font-size: 10rem;
+	font-size: toRem(160);
 }

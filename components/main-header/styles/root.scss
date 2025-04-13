@@ -2,43 +2,28 @@
 
 .root-header-wrapper {
 	height: toRem(64);
-	font-size: toRem(32);
-	font-weight: bold;
 	display: flex;
-	align-items: center;
+	flex-direction: row;
 	justify-content: space-between;
-	padding: 0 toRem(16) 0 0;
 
 	.root-header-title-logo {
 		display: flex;
-		flex-direction: row;
 		align-items: center;
-		gap: toRem(8);
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-
-		.header-title {
-			font-size: toRem(32);
-		}
-		img {
+		gap: toRem(4);
+		padding: toRem(5) 0 0 toRem(5);
+		width: fit-content;
+		.header-logo {
 			width: toRem(48);
 		}
-	}
-
-	.root-header-right {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: toRem(32);
-
-		.header-search-icon {
-			width: toRem(32);
+		.header-title {
+			font-size: toRem(32);
+			font-weight: bold;
+			padding: 0;
 		}
 	}
 
-	.header-current-user{
-		display: flex;
-		flex-direction: row;
+	.root-header-menu-button {
+		width: toRem(32);
+		margin-right: toRem(16);
 	}
 }
