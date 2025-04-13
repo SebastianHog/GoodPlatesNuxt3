@@ -1,12 +1,10 @@
 @use '~/assets/styles/setup' as *;
 
 .menu-icon-wrapper {
-	width: toRem(72);
-	height: toRem(72);
-	border: toRem(2) solid black;
-	border-radius: 100%;
 	cursor: pointer;
+	padding-right: 5rem;
+
 	.menu-icon {
-		width: toRem(42);
+		margin-right: 0;
 	}
 }

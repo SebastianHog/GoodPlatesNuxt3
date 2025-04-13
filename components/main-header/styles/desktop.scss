@@ -2,20 +2,28 @@
 
 .root-header-wrapper {
 	height: toRem(102);
-	padding: 0 toRem(64);
+	padding-left: toRem(16);
 
-	.root-header-title-logo {
-		img {
-			width: toRem(92);
-		}
-		.header-title {
-			font-size: toRem(64);
-		}
+	.root-header-current-user {
+		all: unset;
+		display: flex;
+		align-items: center;
+		font-size: toRem(32);
+		cursor: pointer;
 	}
 
-	.root-header-right {
-		.header-search-icon {
-			width: toRem(48);
+	.root-header-title-logo {
+		position: absolute;
+		top: toRem(16);
+		left: 50%;
+		transform: translateX(-50%);
+
+		.header-logo {
+			width: toRem(64);
+		}
+
+		.header-title {
+			font-size: toRem(56);
 		}
 	}
 }

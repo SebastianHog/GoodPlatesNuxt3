@@ -6,6 +6,10 @@
 	flex-direction: row;
 	justify-content: space-between;
 
+	.root-header-current-user {
+		display: none;
+	}
+
 	.root-header-title-logo {
 		display: flex;
 		align-items: center;
@@ -20,10 +24,5 @@
 			font-weight: bold;
 			padding: 0;
 		}
-	}
-
-	.root-header-menu-button {
-		width: toRem(32);
-		margin-right: toRem(16);
 	}
 }
