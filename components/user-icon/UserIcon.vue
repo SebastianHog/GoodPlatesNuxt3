@@ -34,7 +34,10 @@ const userLetter = computed(() => {
 
 const goToProfile = () => {
 	if (!props.redirect) return;
-	navigateTo(`/user/${props.user?._id}`);
+	if (props.user?._id)
+		navigateTo(`/user/${props.user?._id}`);
+	if (!props.user?._id)
+		navigateTo('/login');
 	utilsStore.toggleSidebar(false);
 }
 

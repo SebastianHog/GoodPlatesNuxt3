@@ -4,7 +4,8 @@
       <div class="sidebar-body">
         <div class="sidebar-user">
           <user-icon redirect v-if="user" :user="user" />
-          <span>{{ user?.username }}</span>
+          <span v-if="user?.username">{{ user.username }}</span>
+          <site-button v-else variant="transparent" to="/login">Log in</site-button>
         </div>
         <ul class="options-list">
           <li v-for="option in data.sidebar.options">

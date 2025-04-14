@@ -63,6 +63,9 @@
 					align-items: center;
 					margin: toRem(8) 0 0 toRem(8);
 					font-size: toRem(20);
+					* {
+						color: white;
+					}
 				}
 
 				.options-list {

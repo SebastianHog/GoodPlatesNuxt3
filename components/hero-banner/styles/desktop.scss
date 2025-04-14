@@ -1,9 +1,15 @@
 @use '~/assets/styles/setup' as *;
 
 .hero-wrapper {
+	font-size: toRem(48);
 	.hero-goto-button {
 		bottom: toRem(16);
 		right: 50%;
 		transform: translate(50%);
+	}
+	.hero-text {
+		.hero-food {
+			font-size: toRem(24);
+		}
 	}
 }
