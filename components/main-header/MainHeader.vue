@@ -3,7 +3,7 @@
 		<div class="root-header-current-user" :to="user?.username ? `/user/${user._id}` : '/login'">
 			<div class="user-wrapper">
 				<site-button v-if="user?.username" :to="`/user/${user._id}`">
-					<user-icon :user="user" />
+					<user-icon :user="user" class="header-user-icon" />
 					<span class="username-display-header">
 						{{ user.username }}
 					</span>

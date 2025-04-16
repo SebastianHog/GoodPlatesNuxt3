@@ -3,7 +3,7 @@
     <section class="sidebar-wrapper" :class="hide">
       <div class="sidebar-body">
         <div class="sidebar-user">
-          <user-icon redirect v-if="user" :user="user" />
+          <user-icon redirect v-if="user" :user="user" class="sidebar-user-icon" />
           <span v-if="user?.username">{{ user.username }}</span>
           <site-button v-else variant="transparent" to="/login">Log in</site-button>
         </div>

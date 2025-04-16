@@ -10,6 +10,15 @@
 		align-items: center;
 		font-size: toRem(32);
 		cursor: pointer;
+
+		.user-wrapper {
+			.header-user-icon {
+				img {
+					width: toRem(64);
+					margin-right: toRem(16);
+				}
+			}
+		}
 	}
 
 	.root-header-title-logo {
