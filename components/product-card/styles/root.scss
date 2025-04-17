@@ -1,9 +1,44 @@
 @use '~/assets/styles/setup' as *;
 
 .product-card-wrapper {
+	all: unset;
 	background: $card-color;
 	width: 90%;
-	height: toRem(200);
+	min-height: toRem(190);
 	border: toRem(2) solid black;
 	border-radius: toRem(16);
+	overflow: hidden;
+	margin-bottom: toRem(12);
+
+	.card-thumbnail {
+		width: 100%;
+		height: toRem(120);
+		overflow: hidden;
+		object-fit: cover;
+	}
+
+	.card-body {
+		padding: 0 toRem(6);
+		.card-title {
+			font-size: toRem(22);
+			font-weight: 500;
+		}
+
+		.card-creator {
+			width: fit-content;
+			display: flex;
+			align-items: center;
+			.card-profile-link {
+				height: toRem(20);
+				color: $text-link-color;
+				text-decoration: underline;
+				padding: 0 0 0 toRem(4);
+			}
+		}
+
+		.card-description {
+			font-size: toRem(12);
+			padding-bottom: toRem(6);
+		}
+	}
 }
