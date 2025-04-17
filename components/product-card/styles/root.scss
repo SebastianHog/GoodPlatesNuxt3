@@ -1,43 +1,9 @@
 @use '~/assets/styles/setup' as *;
 
 .product-card-wrapper {
-	width: toRem(365);
-	height: toRem(105);
-	background: $secondary-color;
-	display: grid;
-	grid-template-columns: 54% 1fr;
-	grid-template-rows: 1fr;
-
-	.product-card-thumbnail {
-		width: 100%;
-	}
-
-	.product-card-body {
-		padding: toRem(5) 0 0 toRem(5);
-		.product-card-header {
-			display: flex;
-			align-items: center;
-			gap: toRem(2);
-			margin-right: toRem(4);
-			.product-card-author {
-				align-self: flex-start;
-				* {
-					width: toRem(19);
-				}
-			}
-
-			.product-card-title {
-				align-self: center;
-				width: 100%;
-				font-size: toRem(14);
-				letter-spacing: toRem(-0.5);
-				line-height: toRem(14);
-			}
-		}
-		.product-card-description {
-			font-size: 10px;
-			margin-top: toRem(5);
-			letter-spacing: toRem(-0.2);
-		}
-	}
+	background: $card-color;
+	width: 90%;
+	height: toRem(200);
+	border: toRem(2) solid black;
+	border-radius: toRem(16);
 }
