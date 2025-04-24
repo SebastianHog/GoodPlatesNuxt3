@@ -28,5 +28,10 @@
 	},
 	"login": {
 		"button": "Log in"
+	},
+	"pages": {
+		"createRecipe": {
+			"imageUrlPlaceholder": "Image link"
+		}
 	}
 }
