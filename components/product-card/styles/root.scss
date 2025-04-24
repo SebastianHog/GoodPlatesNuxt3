@@ -25,7 +25,10 @@
 			font-weight: 500;
 		}
 
-		.card-creator {
+		.card-creator-dt {
+			display: none;
+		}
+		.card-creator-mb {
 			width: fit-content;
 			display: flex;
 			align-items: center;
@@ -36,8 +39,10 @@
 				padding: 0 0 0 toRem(4);
 			}
 		}
-
-		.card-description {
+		.card-description-dt {
+			display: none;
+		}
+		.card-description-mb {
 			font-size: toRem(12);
 			padding-bottom: toRem(6);
 		}
