@@ -30,12 +30,13 @@
       </div>
     </section>
     <div class="overlay">
-      <img src="../../assets/site_icons/close_icon.svg" alt="close" class="close-button" @click="close">
+      <CloseIcon class="close-button" @click="close" />
     </div>
   </div>
 
   <div v-if="sidebarState" class="dropdown-desktop" :class="hide">
-    <img src="../../assets/site_icons/close_icon.svg" alt="close" class="close-button" @click="close">
+    <CloseIcon class="close-button" @click="close" />
+
     <ul class="options-list">
       <li v-for="option in data.sidebar.options">
         <site-button variant="transparent" :to="option.path" @click="close">
@@ -50,6 +51,8 @@
 import './style.scss';
 import { storeToRefs } from 'pinia';
 import data from '~/data/menus-buttons.json'
+import CloseIcon from '~/assets/site_icons/CloseIcon.vue';
+
 
 const utilsStore = useUtilsStore();
 const userStore = useUserStore();
