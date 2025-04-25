@@ -39,6 +39,13 @@
           </div>
         </div>
       </div>
+      <div class="recipe-instructions">
+        <h1 class="input-box-title">Instructions</h1>
+        <div v-for="i, index in stepCount" class="instruction-step" :key="index">
+          <input v-model="i.name" type="text" class="step-name" placeholder="Step Name" maxlength="35" />
+          <textarea v-model="i.description" class="recipe-steps-input" placeholder="Do it like this..." />
+        </div>
+      </div>
     </div>
 
   </section>
@@ -76,19 +83,29 @@ interface Requirement {
   unit: string
 }
 
+interface Steps {
+  name: string
+  description: string
+}
+
+
 const requirements = ref<Requirement[]>([
   { name: '', amount: '', unit: '' }
+])
+
+const stepCount = ref<Steps[]>([
+  { name: '', description: '' }
 ])
 
 watch(
   requirements,
   () => {
     while (requirements.value.length > 1) {
-      const last = requirements.value.at(-1)!
-      const prev = requirements.value.at(-2)!
-      const lastEmpty = !last.name && !last.amount && !last.unit
-      const prevEmpty = !prev.name && !prev.amount && !prev.unit
-      if (lastEmpty && prevEmpty) {
+      const lastItem = requirements.value.at(-1)!
+      const secondLast = requirements.value.at(-2)!
+      const lastEmpty = !lastItem.name && !lastItem.amount && !lastItem.unit
+      const secondLastEmpty = !secondLast.name && !secondLast.amount && !secondLast.unit
+      if (lastEmpty && secondLastEmpty) {
         requirements.value.pop()
       } else {
         break
@@ -96,11 +113,35 @@ watch(
     }
 
     const final = requirements.value.at(-1)!
+
     if (final.name || final.amount || final.unit) {
       requirements.value.push({ name: '', amount: '', unit: '' })
     }
   },
-  { deep: true }
+  { deep: true },
+)
+watch(
+  stepCount,
+  () => {
+    while (stepCount.value.length > 1) {
+      const lastItem = stepCount.value.at(-1)!
+      const secondLast = stepCount.value.at(-2)!
+      const lastEmpty = !lastItem.name && !lastItem.description
+      const secondLastEmpty = !secondLast.name || !secondLast.description
+
+      if (lastEmpty && secondLastEmpty) {
+        stepCount.value.pop()
+      } else {
+        break
+      }
+    }
+
+    const final = stepCount.value.at(-1)!
+    if (final.name.length > 1 && final.description) {
+      stepCount.value.push({ name: '', description: '' })
+    }
+  },
+  { deep: true },
 )
 
 </script>
