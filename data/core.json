@@ -31,8 +31,14 @@
 	},
 	"pages": {
 		"createRecipe": {
-			"imageUrlPlaceholder": "Image link",
-			"recipeTitlePlaceholder": "Recipe title"
+			"buttons": {
+				"addImage": "Add image"
+			},
+			"placeholderText": {
+				"imageUrlPlaceholder": "Image link",
+				"recipeTitlePlaceholder": "Recipe title",
+				"recipeDescriptionPlaceholder": "Recipe description"
+			}
 		}
 	}
 }

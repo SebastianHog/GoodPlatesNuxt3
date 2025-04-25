@@ -80,4 +80,87 @@
 			border-radius: toRem(8);
 		}
 	}
+
+	.recipe-req-instructions {
+		margin: toRem(8);
+		margin-top: 1rem;
+
+		.recipe-requirements {
+			width: 100%;
+			min-height: toRem(64);
+			border-radius: toRem(8);
+			border: toRem(1) solid black;
+			position: relative;
+			padding: 0 toRem(4);
+			padding-bottom: toRem(4);
+
+			.requirements-inner {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.input-box-title {
+				position: absolute;
+				top: toRem(-12);
+				left: toRem(8);
+				background: $primary-color;
+				padding: 0 toRem(4);
+				z-index: 1;
+			}
+
+			.item-input-wrapper {
+				margin-top: toRem(9);
+
+				.item-input-header {
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					font-weight: bold;
+
+					.item-label {
+						width: 60vw;
+					}
+					> *:not(.item-label) {
+						text-align: center;
+					}
+				}
+
+				.input-requirements {
+					display: flex;
+					flex-direction: column;
+					gap: toRem(1);
+
+					.item:nth-child(even) {
+						background: rgba(0, 0, 0, 0.2);
+					}
+					.item {
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+
+						.item-name {
+							width: 60vw;
+							margin-left: toRem(2);
+						}
+						.item-amount,
+						.item-unit {
+							text-align: center;
+							width: 16vw;
+							justify-self: center;
+						}
+
+						input {
+							background: none;
+							border: 1px solid rgba(0, 0, 0, 0.1);
+							border: none;
+							border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+							&:focus {
+								outline: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
