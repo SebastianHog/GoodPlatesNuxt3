@@ -1,7 +1,7 @@
 <template>
   <section class="create-recipe-page-wrapper">
     <div class="add-image-wrapper">
-      <div v-if="displayImage">
+      <div v-if="displayImage" class="added-image-wrapper">
         <CloseIcon @click="removeImage" alt="remove image" class="remove-image-icon" />
         <img :src="imageUrl" alt="image" class="added-image" />
       </div>
