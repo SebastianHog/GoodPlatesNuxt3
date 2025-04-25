@@ -23,7 +23,6 @@ let displayImage = ref(false);
 
 const imagUrlPlaceholder = core.pages.createRecipe.imageUrlPlaceholder;
 
-
 const appendImage = () => {
   displayImage.value = true;
 }
