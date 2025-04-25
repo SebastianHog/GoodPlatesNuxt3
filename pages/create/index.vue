@@ -10,6 +10,9 @@
         <site-button @click="appendImage" class="add-image-action">Add image</site-button>
       </div>
     </div>
+    <div class="create-recipe-form-wrapper">
+      <input type="text" :placeholder="recipeTitlePlaceholder" class="title-input" v-model="recipeTitle" />
+    </div>
   </section>
 </template>
 
@@ -19,11 +22,17 @@ import core from '~/data/core.json';
 import CloseIcon from '~/assets/site_icons/CloseIcon.vue';
 
 const imageUrl = ref('');
+const recipeTitle = ref('');
+const recipeDescription = ref('');
 let displayImage = ref(false);
 
+const validImageEndings = ['jpg', 'jpeg', 'png', 'webp', 'avif', 'bmp'];
+
 const imagUrlPlaceholder = core.pages.createRecipe.imageUrlPlaceholder;
+const recipeTitlePlaceholder = core.pages.createRecipe.recipeTitlePlaceholder;
 
 const appendImage = () => {
+  if (!imageUrl.value || !validImageEndings.some((ending) => imageUrl.value.toLowerCase().endsWith(ending))) return;
   displayImage.value = true;
 }
 

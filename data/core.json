@@ -31,7 +31,8 @@
 	},
 	"pages": {
 		"createRecipe": {
-			"imageUrlPlaceholder": "Image link"
+			"imageUrlPlaceholder": "Image link",
+			"recipeTitlePlaceholder": "Recipe title"
 		}
 	}
 }

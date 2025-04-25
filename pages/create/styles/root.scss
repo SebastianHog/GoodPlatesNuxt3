@@ -42,12 +42,30 @@
 			border: none;
 			padding: toRem(4) toRem(16);
 			margin-bottom: toRem(16);
+			background: rgba(0, 0, 0, 0.35);
+			color: white;
 		}
 
 		.add-image-action {
 			background: $secondary-color;
 			color: $secondary-text-color;
 			height: 2rem;
+		}
+	}
+
+	.create-recipe-form-wrapper {
+		display: flex;
+		justify-content: center;
+		margin: toRem(8);
+		.title-input {
+			border-radius: 100rem;
+			width: 100%;
+			height: toRem(28);
+			border: none;
+			padding: toRem(4) toRem(16);
+			margin-bottom: toRem(16);
+			background: rgba(0, 0, 0, 0.35);
+			color: white;
 		}
 	}
 }
