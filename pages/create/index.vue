@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-
+    <button @click="uploadRecipe">Upload</button>
   </section>
 </template>
 
@@ -56,10 +56,31 @@ import './style.scss';
 import core from '~/data/core.json';
 import CloseIcon from '~/assets/site_icons/CloseIcon.vue';
 
+const userStore = useUserStore();
+
+
+interface Requirement {
+  name: string
+  amount: string
+  unit: string
+}
+
+interface Steps {
+  name: string
+  description: string
+}
+
 const imageUrl = ref('');
 const recipeTitle = ref('');
 const recipeDescription = ref('');
 let displayImage = ref(false);
+
+const requirements = ref<Requirement[]>([
+  { name: '', amount: '', unit: '' }
+])
+const stepCount = ref<Steps[]>([
+  { name: '', description: '' }
+])
 
 const validImageEndings = ['jpg', 'jpeg', 'png', 'webp', 'avif', 'bmp'];
 
@@ -77,26 +98,31 @@ const removeImage = () => {
   imageUrl.value = '';
 }
 
-interface Requirement {
-  name: string
-  amount: string
-  unit: string
+const uploadRecipe = () => {
+  const filledRequirements = requirements.value.filter(
+    ({ name, amount, unit }) =>
+      Boolean(name.trim() || amount.trim() || unit.trim())
+  )
+  const filledSteps = stepCount.value.filter(
+    ({ name, description }) =>
+      Boolean(name.trim() || description.trim())
+  )
+
+  const recipe = {
+    title: recipeTitle.value,
+    description: recipeDescription.value,
+    thumbnail: imageUrl.value,
+    requirements: filledRequirements,
+    steps: filledSteps,
+    creator: userStore.user,
+  }
+
+  console.log('Uploading recipe:', recipe);
+
+  userStore.createRecipe(recipe);
 }
 
-interface Steps {
-  name: string
-  description: string
-}
-
-
-const requirements = ref<Requirement[]>([
-  { name: '', amount: '', unit: '' }
-])
-
-const stepCount = ref<Steps[]>([
-  { name: '', description: '' }
-])
-
+//#region Watchers
 watch(
   requirements,
   () => {
@@ -120,6 +146,7 @@ watch(
   },
   { deep: true },
 )
+
 watch(
   stepCount,
   () => {
@@ -144,4 +171,5 @@ watch(
   { deep: true },
 )
 
+//#endregion
 </script>

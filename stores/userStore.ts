@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import type { IUser } from '~/types/user';
+import type { IRecipe } from '~/types/recipe';
 
 export const useUserStore = defineStore('user', {
 	state: () => ({
@@ -105,6 +106,25 @@ export const useUserStore = defineStore('user', {
 				return resp;
 			} catch (err: any) {
 				throw new Error(err.message || 'Failed to get user data');
+			}
+		},
+
+		async createRecipe(recipe: Partial<IRecipe>) {
+			const config = useRuntimeConfig();
+			const base_url = config.public.BASE_URL;
+
+			try {
+				const resp = await $fetch<IRecipe>(`${base_url}/recipes/add`, {
+					method: 'POST',
+					body: recipe,
+					credentials: 'include',
+				});
+				console.log('createRecipe:', resp);
+
+				return resp;
+			} catch (err: any) {
+				console.log('createRecipe error:', err);
+				// throw new Error('fuckshit', err.message || 'Failed to create recipe');
 			}
 		},
 	},
