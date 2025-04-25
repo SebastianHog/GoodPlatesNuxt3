@@ -12,6 +12,7 @@
     </div>
     <div class="create-recipe-form-wrapper">
       <input type="text" :placeholder="recipeTitlePlaceholder" class="title-input" v-model="recipeTitle" />
+      <textarea v-model="recipeDescription" class="description-input"></textarea>
     </div>
   </section>
 </template>
