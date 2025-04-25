@@ -1,0 +1,38 @@
+@use '~/assets/styles/setup' as *;
+
+.recipe-page-wrapper {
+	.recipe-thumbnail {
+		height: toRem(220);
+		width: 100%;
+		border-bottom: toRem(2) solid black;
+	}
+	.recipe-info-wrapper {
+		padding: toRem(8);
+		.recipe-title {
+			font-size: toRem(24);
+		}
+		.recipe-author {
+			font-size: toRem(12);
+			display: block;
+			padding: 0;
+			height: fit-content;
+
+			span {
+				color: $text-link-color;
+				text-decoration: underline;
+			}
+		}
+		.recipe-description {
+			margin-top: toRem(8);
+			border: toRem(2) solid rgba(0, 0, 0, 1);
+			color: black;
+			padding: toRem(8);
+			min-height: 5rem;
+			min-width: 100%;
+			max-width: 100%;
+			border-radius: toRem(8);
+			letter-spacing: toRem(-0.5);
+			line-height: toRem(16);
+		}
+	}
+}
