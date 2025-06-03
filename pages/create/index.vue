@@ -1,12 +1,14 @@
 <template>
   <section class="create-recipe-page-wrapper">
     <div class="add-image-wrapper">
+
       <div v-if="displayImage" class="added-image-wrapper">
         <CloseIcon @click="removeImage" alt="remove image" class="remove-image-icon" />
-        <img :src="imageUrl" alt="image" class="added-image" />
+        <img :src="poopface" alt="image" class="added-image" />
       </div>
+
       <div v-else>
-        <input type="text" :placeholder="imagUrlPlaceholder" class="add-image-input" v-model="imageUrl" />
+        <input type="text" :placeholder="imagUrlPlaceholder" class="add-image-input" v-model="poopface" />
         <site-button @click="appendImage" class="add-image-action">{{ core.pages.createRecipe.buttons.addImage
         }}</site-button>
       </div>
@@ -70,9 +72,10 @@ interface Steps {
   description: string
 }
 
-const imageUrl = ref('');
+const poopface = ref('');
 const recipeTitle = ref('');
 const recipeDescription = ref('');
+
 let displayImage = ref(false);
 
 const requirements = ref<Requirement[]>([
@@ -89,13 +92,13 @@ const recipeTitlePlaceholder = core.pages.createRecipe.placeholderText.recipeTit
 const recipeDescriptionPlaceholder = core.pages.createRecipe.placeholderText.recipeDescriptionPlaceholder;
 
 const appendImage = () => {
-  if (!imageUrl.value || !validImageEndings.some((ending) => imageUrl.value.toLowerCase().endsWith(ending))) return;
+  if (!poopface.value || !validImageEndings.some((ending) => poopface.value.toLowerCase().endsWith(ending))) return;
   displayImage.value = true;
 }
 
 const removeImage = () => {
   displayImage.value = false;
-  imageUrl.value = '';
+  poopface.value = '';
 }
 
 const uploadRecipe = () => {
@@ -111,7 +114,7 @@ const uploadRecipe = () => {
   const recipe = {
     title: recipeTitle.value,
     description: recipeDescription.value,
-    thumbnail: imageUrl.value,
+    thumbnail: poopface.value,
     requirements: filledRequirements,
     steps: filledSteps,
     creator: userStore.user,

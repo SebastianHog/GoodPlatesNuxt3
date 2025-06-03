@@ -9,7 +9,7 @@ export type IRecipe = {
 		description: string;
 	}[];
 	requirements: {
-		item: string;
+		name: string;
 		amount: string;
 		unit: string;
 	}[];
