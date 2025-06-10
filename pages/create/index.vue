@@ -10,7 +10,7 @@
       <div v-else>
         <input type="text" :placeholder="imagUrlPlaceholder" class="add-image-input" v-model="poopface" />
         <site-button @click="appendImage" class="add-image-action">{{ core.pages.createRecipe.buttons.addImage
-        }}</site-button>
+          }}</site-button>
       </div>
     </div>
 
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    <button @click="uploadRecipe">Upload</button>
+    <site-button to="/" @click="uploadRecipe">Publish</site-button>
   </section>
 </template>
 

@@ -5,7 +5,12 @@
         <div class="sidebar-user">
           <user-icon redirect v-if="user" :user="user" class="sidebar-user-icon" />
           <span v-if="user?.username">{{ user.username }}</span>
-          <site-button v-else variant="transparent" to="/login" class="log-in-label">Log in</site-button>
+          <div v-else style="display: flex; justify-content: center; align-items: center;">
+            <site-button variant="transparent" to="/login" class="log-in-label">Log in</site-button>
+            <p style="font-size: 16px;">or</p>
+            <site-button variant="transparent" to="/register" class="log-in-label">Register</site-button>
+
+          </div>
         </div>
         <ul class="options-list">
           <li v-for="option in data.sidebar.options">
