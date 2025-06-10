@@ -1,6 +1,5 @@
 @use '~/assets/styles/setup' as *;
 
 .user-icon-wrapper {
-	& > * {
-	}
+	width: toRem(32);
 }
