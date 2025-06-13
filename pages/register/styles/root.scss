@@ -66,12 +66,10 @@
 	}
 
 	.buttons-container {
-		position: absolute;
-		bottom: toRem(48);
-		width: 100vw;
+		margin-top: 2rem;
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
+		justify-content: space-between;
 		padding: 0 toRem(32);
 
 		.login-prompt {

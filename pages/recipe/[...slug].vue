@@ -1,58 +1,64 @@
 <template>
-	<section class="recipe-page-wrapper">
-		<img :src="recipe?.thumbnail" alt="image" class="recipe-thumbnail" />
-		<div class="recipe-info-wrapper">
-			<h1 class="recipe-title">{{ recipe?.title }}</h1>
-			<div style="display: flex; justify-content: space-between;">
-				<site-button class="recipe-author" style="width: fit-content;" :to="`/user/${recipe?.creator._id}`">Written by:
-					<span>
-						{{ recipe?.creator.username }}</span>
-				</site-button>
-				<site-button v-if="user?._id === recipe?.creator._id" @click="removeRecipe"
-					style="width: fit-content; height: .2rem; color: red; border: 1px solid red">Remove</site-button>
-			</div>
-			<p class="recipe-description">{{ recipe?.description }}</p>
-			<div class="display-container">
-				<h1 class="requirements-title">Requirements</h1>
-				<div class="item" v-for="(req, i) in recipe?.requirements" :key="i">
-					<h3 class="item-name">{{ req.name }}</h3>
-					<h3 class="item-name">{{ req.amount }}</h3>
-					<h3 class="item-name">{{ req.unit }}</h3>
-				</div>
-			</div>
-			<div class="display-container">
-				<h1>Instructions</h1>
-				<div class="instruction-item" v-for="(step, i) in recipe?.steps" :key="i">
-					<h1>
-						{{ step.name }}
-					</h1>
-					<p>{{ step.description }}</p>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section v-if="!recipe?.title">{{ i18n.recipe_loading }}</section>
+  <section v-else class="recipe-page-wrapper">
+    <div class="recipe-info-section">
+      <img :src="recipe.thumbnail" :alt="i18n.image_alt + recipe.title" class="recipe-thumbnail">
+      <div class="recipe-information">
+        <h1 class="recipe-title">{{ recipe.title }}</h1>
+        <site-button class="recipe-author" :to="`/user/${recipe?.creator._id}`">{{ i18n.written_by }}:
+          <span>
+            {{ recipe?.creator.username }}</span>
+        </site-button>
+        <p class="recipe-desc">{{ recipe.description }}</p>
+      </div>
+    </div>
+    <div class="recipe-instruction-section">
+      <title-text-box title="Requirements">
+        <ul class="reqs-list">
+          <li v-for="req in recipe.requirements">
+            <div>{{ req.name }}</div>
+            <div class="count-unit">
+              <div>{{ req.amount }}</div>
+              <div>{{ req.unit }}</div>
+            </div>
+          </li>
+        </ul>
+      </title-text-box>
+      <title-text-box title="Instructions">
+        <ul class="instructions-list">
+          <li v-for="step in recipe.steps">
+            <h1 class="step-title">{{ step.name }}</h1>
+            <p>{{ step.description }}</p>
+          </li>
+        </ul>
+      </title-text-box>
+    </div>
+  </section>
 </template>
 
+
 <script lang="ts" setup>
-import './style.scss'
 import type { IRecipe } from '~/types/recipe';
+import './style.scss'
 import { useUserStore } from '#imports';
+import core from '../../data/core.json'
 
 const user = useUserStore().user;
-
-
 const route = useRoute();
 const recipeId = route.params.slug[0];
-
 const { data: recipe } = await useAsyncData<IRecipe>('recipe', () =>
-	useRecipeStore().getRecipeById(recipeId)
+  useRecipeStore().getRecipeById(recipeId)
 );
 
+const i18n = {
+  recipe_loading: core.pages.recipe.loadingRecipe,
+  image_alt: core.pages.recipe.thumbnailAlt,
+  written_by: core.pages.recipe.authorMarker,
+}
+
 const removeRecipe = () => {
-	console.log('removing recipe')
-	useRecipeStore().deleteRecipe(recipe.value?._id, user?._id);
+  if (!recipe.value || !user) return console.error('Could not remove recipe.');
+  useRecipeStore().deleteRecipe(recipe.value?._id, user?._id);
 }
 
 </script>
-
-<style></style>

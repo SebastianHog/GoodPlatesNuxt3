@@ -1,0 +1,28 @@
+@use '~/assets/styles/setup' as *;
+
+.recipe-page-wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	.recipe-info-section {
+		width: 50vw;
+		.recipe-thumbnail {
+			width: 50vw;
+		}
+		.recipe-information {
+			.recipe-title {
+				font-size: toRem(32);
+				font-weight: bold;
+			}
+			.recipe-author {
+				font-size: toRem(22);
+				margin-bottom: toRem(4);
+			}
+			.recipe-desc {
+				font-size: toRem(28);
+			}
+		}
+	}
+}

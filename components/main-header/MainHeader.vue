@@ -9,7 +9,7 @@
 					</span>
 				</site-button>
 				<site-button v-else to="/login">
-					<user-icon v-if="user" :user="user" /> Log in
+					<user-icon v-if="user" :user="user" style="margin-right: .5rem;" />Log in
 				</site-button>
 			</div>
 		</div>

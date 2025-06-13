@@ -16,6 +16,7 @@
 		</div>
 		<div class="buttons-container">
 			<site-button @click="login" class="login-button">{{ coreData.login.button }}</site-button>
+			<site-button to="/register" class="register-button">{{ coreData.register.registerPrompt }}</site-button>
 		</div>
 	</section>
 </template>

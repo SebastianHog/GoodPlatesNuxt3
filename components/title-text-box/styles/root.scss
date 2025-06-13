@@ -1,0 +1,17 @@
+@use '~/assets/styles/setup' as *;
+
+.title-text-box-wrapper {
+	border: toRem(2) solid black;
+	border-radius: toRem(6);
+	min-height: toRem(72);
+
+	.title-text-box-title-text {
+		background: $primary-color;
+		position: relative;
+		top: toRem(-12);
+		padding: 0 toRem(6);
+		margin-left: toRem(8);
+		width: fit-content;
+		font-weight: bold;
+	}
+}

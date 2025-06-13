@@ -33,7 +33,6 @@
 	}
 
 	.inputs-container {
-		width: 45vw;
 		gap: toRem(40);
 		display: flex;
 		flex-direction: column;
@@ -59,15 +58,24 @@
 		}
 	}
 	.buttons-container {
-		.login-button {
+		display: flex;
+		gap: 1rem;
+
+		.login-button,
+		.register-button {
 			background: $tertiary-color;
 			color: $secondary-text-color;
 			width: fit-content;
-			width: toRem(221);
+			width: toRem(210);
 			height: toRem(76);
 			border-radius: toRem(10);
 			font-size: toRem(36);
 			font-weight: bold;
+		}
+
+		.register-button {
+			flex: 1;
+			font-size: toRem(20);
 		}
 	}
 }

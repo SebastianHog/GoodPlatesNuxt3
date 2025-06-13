@@ -1,0 +1,102 @@
+@use '~/assets/styles/setup' as *;
+
+.recipe-page-wrapper {
+	.recipe-thumbnail {
+		height: toRem(220);
+		width: 100%;
+		border-bottom: toRem(2) solid black;
+	}
+	.recipe-info-wrapper {
+		padding: 0 toRem(8);
+		display: flex;
+		flex-direction: column;
+		gap: toRem(8);
+		.recipe-title {
+			font-size: toRem(24);
+		}
+		.recipe-author {
+			font-size: toRem(12);
+			display: block;
+			padding: 0;
+			height: fit-content;
+
+			span {
+				color: $text-link-color;
+				text-decoration: underline;
+			}
+		}
+		.recipe-description {
+			margin-top: toRem(8);
+			border: toRem(2) solid rgba(0, 0, 0, 1);
+			color: black;
+			padding: toRem(8);
+			min-height: 5rem;
+			min-width: 100%;
+			max-width: 100%;
+			border-radius: toRem(8);
+			letter-spacing: toRem(-0.5);
+			line-height: toRem(16);
+		}
+
+		.display-container {
+			display: flex;
+			flex-direction: column;
+			gap: toRem(1);
+			border: toRem(2) solid black;
+			border-radius: toRem(8);
+			margin-bottom: toRem(16);
+
+			h1 {
+				position: relative;
+				top: toRem(-10);
+				left: toRem(8);
+				background: $primary-color;
+				padding: 0 toRem(4);
+				width: fit-content;
+			}
+
+			.instruction-item {
+				padding: toRem(4);
+
+				h1 {
+					font-size: toRem(18);
+					text-decoration: underline;
+					font-weight: bolder;
+				}
+				p {
+					font-size: toRem(14);
+					padding-left: toRem(12);
+				}
+			}
+
+			.item:nth-child(even) {
+				background: rgba(0, 0, 0, 0.2);
+			}
+			.item {
+				display: grid;
+				grid-template-columns: 3fr 1fr 1fr;
+
+				.item-name,
+				.item-amount,
+				.item-unit {
+					width: 100%;
+				}
+
+				.item-name {
+					margin-left: toRem(2);
+				}
+
+				input {
+					background: none;
+					border: 1px solid rgba(0, 0, 0, 0.1);
+					border: none;
+					border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,100 +1,78 @@
 @use '~/assets/styles/setup' as *;
 
 .recipe-page-wrapper {
-	.recipe-thumbnail {
-		height: toRem(220);
-		width: 100%;
-		border-bottom: toRem(2) solid black;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.recipe-info-section {
+		.recipe-thumbnail {
+			object-fit: contain;
+			width: 100%;
+			max-height: toRem(992);
+		}
+
+		.recipe-information {
+			padding: toRem(8);
+			.recipe-title {
+				font-size: toRem(24);
+			}
+
+			.recipe-author {
+				font-size: toRem(14);
+				display: block;
+				padding: 0;
+				height: fit-content;
+				margin-top: toRem(4);
+
+				span {
+					color: $text-link-color;
+					text-decoration: underline;
+				}
+			}
+
+			.recipe-desc {
+				border: toRem(2) solid black;
+				min-height: toRem(128);
+				max-height: toRem(372);
+				border-radius: toRem(8);
+				padding: toRem(4);
+				overflow: scroll;
+			}
+		}
 	}
-	.recipe-info-wrapper {
-		padding: 0 toRem(8);
+
+	.recipe-instruction-section {
 		display: flex;
 		flex-direction: column;
-		gap: toRem(8);
-		.recipe-title {
-			font-size: toRem(24);
-		}
-		.recipe-author {
-			font-size: toRem(12);
-			display: block;
-			padding: 0;
-			height: fit-content;
+		gap: toRem(12);
+		padding: toRem(8);
 
-			span {
-				color: $text-link-color;
-				text-decoration: underline;
+		.reqs-list {
+			li {
+				display: flex;
+				padding-left: toRem(8);
+				div {
+					flex: 1;
+				}
+				.count-unit {
+					display: flex;
+					justify-content: space-between;
+				}
+				&:nth-child(odd) {
+					background: rgba(0, 0, 0, 0.175);
+				}
 			}
 		}
-		.recipe-description {
-			margin-top: toRem(8);
-			border: toRem(2) solid rgba(0, 0, 0, 1);
-			color: black;
-			padding: toRem(8);
-			min-height: 5rem;
-			min-width: 100%;
-			max-width: 100%;
-			border-radius: toRem(8);
-			letter-spacing: toRem(-0.5);
-			line-height: toRem(16);
-		}
-
-		.display-container {
-			display: flex;
-			flex-direction: column;
-			gap: toRem(1);
-			border: toRem(2) solid black;
-			border-radius: toRem(8);
-			margin-bottom: toRem(16);
-
-			h1 {
-				position: relative;
-				top: toRem(-10);
-				left: toRem(8);
-				background: $primary-color;
-				padding: 0 toRem(4);
-				width: fit-content;
-			}
-
-			.instruction-item {
-				padding: toRem(4);
-
-				h1 {
-					font-size: toRem(18);
+		.instructions-list {
+			li {
+				padding: toRem(8);
+				.step-title {
+					font-size: toRem(20);
+					font-weight: bold;
 					text-decoration: underline;
-					font-weight: bolder;
-				}
-				p {
-					font-size: toRem(14);
-					padding-left: toRem(12);
-				}
-			}
-
-			.item:nth-child(even) {
-				background: rgba(0, 0, 0, 0.2);
-			}
-			.item {
-				display: grid;
-				grid-template-columns: 3fr 1fr 1fr;
-
-				.item-name,
-				.item-amount,
-				.item-unit {
-					width: 100%;
-				}
-
-				.item-name {
-					margin-left: toRem(2);
-				}
-
-				input {
-					background: none;
-					border: 1px solid rgba(0, 0, 0, 0.1);
-					border: none;
-					border-right: 1px solid rgba(0, 0, 0, 0.2);
-
-					&:focus {
-						outline: none;
-					}
+					margin-bottom: toRem(4);
 				}
 			}
 		}

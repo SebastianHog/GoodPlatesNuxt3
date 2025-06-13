@@ -22,6 +22,7 @@
 	},
 	"register": {
 		"button": "Register",
+		"registerPrompt": "Don't have an account? Register!",
 		"passwordNoMatch": "Passwords do not match",
 		"loginPrompt": "Already have an account? Log in!"
 	},
@@ -38,6 +39,12 @@
 				"recipeTitlePlaceholder": "Recipe title",
 				"recipeDescriptionPlaceholder": "Recipe description"
 			}
+		},
+		"recipe": {
+			"loadingRecipe": "Loading Recipe...",
+			"thumbnailAlt": "Thumbnail of ",
+			"authorMarker": "Written by",
+			"deleteRecipe": "Remove"
 		}
 	}
 }

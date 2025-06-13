@@ -7,16 +7,19 @@
 				<h1>GoodPlates</h1>
 			</span>
 		</h1>
-		<div class="inputs-container">
-			<input type="text" placeholder="Username" class="username-input" v-model="username" />
-			<input type="text" placeholder="Email" class="email-input" v-model="email" />
-			<input type="password" placeholder="Password" class="password-input" v-model="password" />
-			<input type="password" placeholder="Confirm password" class="password-input" v-model="passwordVerify" />
-			<p v-if="password !== passwordVerify" class="password-mismatch-alert">{{ coreData.register.passwordNoMatch }}</p>
-		</div>
-		<div class="buttons-container">
-			<site-button to="/login" class="login-promt">{{ coreData.register.loginPrompt }}</site-button>
-			<site-button @click="register" class="register-button">{{ coreData.register.button }}</site-button>
+		<div class="form-wrapper">
+			<div class="inputs-container">
+				<input type="text" placeholder="Username" class="username-input" v-model="username" />
+				<input type="text" placeholder="Email" class="email-input" v-model="email" />
+				<input type="password" placeholder="Password" class="password-input" v-model="password" />
+				<input type="password" placeholder="Confirm password" class="password-input" v-model="passwordVerify" />
+				<p v-if="password !== passwordVerify" class="password-mismatch-alert">{{ coreData.register.passwordNoMatch }}
+				</p>
+			</div>
+			<div class="buttons-container">
+				<site-button to="/login" class="login-promt">{{ coreData.register.loginPrompt }}</site-button>
+				<site-button @click="register" class="register-button">{{ coreData.register.button }}</site-button>
+			</div>
 		</div>
 
 	</section>
