@@ -5,10 +5,13 @@
       <img :src="recipe.thumbnail" :alt="i18n.image_alt + recipe.title" class="recipe-thumbnail">
       <div class="recipe-information">
         <h1 class="recipe-title">{{ recipe.title }}</h1>
-        <site-button class="recipe-author" :to="`/user/${recipe?.creator._id}`">{{ i18n.written_by }}:
-          <span>
-            {{ recipe?.creator.username }}</span>
-        </site-button>
+        <div class="authors-row">
+          <site-button class="recipe-author" :to="`/user/${recipe?.creator._id}`">{{ i18n.written_by }}:
+            <span>
+              {{ recipe?.creator.username }}</span>
+          </site-button>
+          <site-button class="remove-recipe" @click="removeRecipe">{{ i18n.remove_recipe }}</site-button>
+        </div>
         <p class="recipe-desc">{{ recipe.description }}</p>
       </div>
     </div>
@@ -54,6 +57,7 @@ const i18n = {
   recipe_loading: core.pages.recipe.loadingRecipe,
   image_alt: core.pages.recipe.thumbnailAlt,
   written_by: core.pages.recipe.authorMarker,
+  remove_recipe: core.pages.recipe.deleteRecipe
 }
 
 const removeRecipe = () => {

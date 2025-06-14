@@ -1,16 +1,15 @@
 <template>
   <section class="create-recipe-page-wrapper">
     <div class="add-image-wrapper">
-
       <div v-if="displayImage" class="added-image-wrapper">
         <CloseIcon @click="removeImage" alt="remove image" class="remove-image-icon" />
-        <img :src="poopface" alt="image" class="added-image" />
+        <img :src="imageUrl" alt="image" class="added-image" />
       </div>
 
       <div v-else>
-        <input type="text" :placeholder="imagUrlPlaceholder" class="add-image-input" v-model="poopface" />
+        <input type="text" :placeholder="imagUrlPlaceholder" class="add-image-input" v-model="imageUrl" />
         <site-button @click="appendImage" class="add-image-action">{{ core.pages.createRecipe.buttons.addImage
-          }}</site-button>
+        }}</site-button>
       </div>
     </div>
 
@@ -32,7 +31,7 @@
             </div>
 
             <div class="input-requirements">
-              <div class="item" v-for="(req, idx) in requirements" :key="idx">
+              <div class="item" v-for="(req, index) in requirements" :key="index">
                 <input type="text" class="item-name" placeholder="Item" v-model="req.name" />
                 <input type="text" class="item-amount" placeholder="Amount" v-model="req.amount" />
                 <input type="text" class="item-unit" maxlength="10" placeholder="Unit" v-model="req.unit" />
@@ -43,13 +42,13 @@
       </div>
       <div class="recipe-instructions">
         <h1 class="input-box-title">Instructions</h1>
-        <div v-for="i, index in stepCount" class="instruction-step" :key="index">
+        <div v-for="(i, index) in stepCount" class="instruction-step" :key="index">
           <input v-model="i.name" type="text" class="step-name" placeholder="Step Name" maxlength="35" />
           <textarea v-model="i.description" class="recipe-steps-input" placeholder="Do it like this..." />
         </div>
       </div>
     </div>
-    <site-button to="/" @click="uploadRecipe">Publish</site-button>
+    <site-button to="/" @click="uploadRecipe">{{ i18n.publish }}</site-button>
   </section>
 </template>
 
@@ -60,6 +59,9 @@ import CloseIcon from '~/assets/site_icons/CloseIcon.vue';
 
 const userStore = useUserStore();
 
+const i18n = {
+  publish: core.pages.createRecipe.buttons.publishRecipe
+}
 
 interface Requirement {
   name: string
@@ -72,7 +74,7 @@ interface Steps {
   description: string
 }
 
-const poopface = ref('');
+const imageUrl = ref('');
 const recipeTitle = ref('');
 const recipeDescription = ref('');
 
@@ -92,13 +94,13 @@ const recipeTitlePlaceholder = core.pages.createRecipe.placeholderText.recipeTit
 const recipeDescriptionPlaceholder = core.pages.createRecipe.placeholderText.recipeDescriptionPlaceholder;
 
 const appendImage = () => {
-  if (!poopface.value || !validImageEndings.some((ending) => poopface.value.toLowerCase().endsWith(ending))) return;
+  if (!imageUrl.value || !validImageEndings.some((ending) => imageUrl.value.toLowerCase().endsWith(ending))) return;
   displayImage.value = true;
 }
 
 const removeImage = () => {
   displayImage.value = false;
-  poopface.value = '';
+  imageUrl.value = '';
 }
 
 const uploadRecipe = () => {
@@ -114,10 +116,10 @@ const uploadRecipe = () => {
   const recipe = {
     title: recipeTitle.value,
     description: recipeDescription.value,
-    thumbnail: poopface.value,
+    thumbnail: imageUrl.value,
     requirements: filledRequirements,
     steps: filledSteps,
-    creator: userStore.user,
+    ...(userStore.user ? { creator: userStore.user } : {}),
   }
 
   console.log('Uploading recipe:', recipe);
@@ -125,7 +127,6 @@ const uploadRecipe = () => {
   userStore.createRecipe(recipe);
 }
 
-//#region Watchers
 watch(
   requirements,
   () => {
@@ -174,5 +175,4 @@ watch(
   { deep: true },
 )
 
-//#endregion
 </script>

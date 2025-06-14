@@ -124,7 +124,6 @@ export const useUserStore = defineStore('user', {
 				return resp;
 			} catch (err: any) {
 				console.log('createRecipe error:', err);
-				// throw new Error('fuckshit', err.message || 'Failed to create recipe');
 			}
 		},
 	},

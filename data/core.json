@@ -32,7 +32,8 @@
 	"pages": {
 		"createRecipe": {
 			"buttons": {
-				"addImage": "Add image"
+				"addImage": "Add image",
+				"publishRecipe": "Publish"
 			},
 			"placeholderText": {
 				"imageUrlPlaceholder": "Image link",

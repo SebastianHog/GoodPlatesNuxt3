@@ -19,16 +19,30 @@
 				font-size: toRem(24);
 			}
 
-			.recipe-author {
-				font-size: toRem(14);
-				display: block;
-				padding: 0;
-				height: fit-content;
-				margin-top: toRem(4);
+			.authors-row {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				.recipe-author {
+					font-size: toRem(14);
+					display: block;
+					padding: 0;
+					height: fit-content;
+					margin-top: toRem(4);
 
-				span {
-					color: $text-link-color;
-					text-decoration: underline;
+					span {
+						color: $text-link-color;
+						text-decoration: underline;
+					}
+				}
+				.remove-recipe {
+					color: $text-bad-color;
+					border: toRem(1) solid $text-bad-color;
+					margin-bottom: toRem(4);
+					border-radius: toRem(4);
+				}
+				.remove-recipe:hover {
+					border: 1rem solid blue;
 				}
 			}
 
