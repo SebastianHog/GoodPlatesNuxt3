@@ -1,0 +1,11 @@
+@use '~/assets/styles/setup' as *;
+.my-recipes-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: toRem(32);
+	.product-card-wrapper {
+		width: 45%;
+		min-width: toRem(520);
+	}
+}
