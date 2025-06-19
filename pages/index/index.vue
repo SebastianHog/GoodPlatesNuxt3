@@ -5,7 +5,7 @@
 		<section class="product-listings">
 			<ProductCard v-if="frontPageRecipes && frontPageRecipes.length" v-for="recipe in frontPageRecipes"
 				:key="recipe._id" :product="recipe" />
-			<h1 v-else>Loading...</h1>
+			<PostLoader v-else v-for="i in 8" :key="i" />
 		</section>
 	</section>
 </template>
